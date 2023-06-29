@@ -6,7 +6,6 @@ Welcome to the repository for the **Couch Pecan Farm Website**! This repository 
 
 - [About](#about)
 - [Features](#features)
-- [Getting Started](#getting-started)
 - [License](#license)
 
 ## About
