@@ -1,0 +1,37 @@
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("/static/images/ParrallelTrees.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 60%;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 50%;
+}
+.inner-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.title-text {
+    color: papayawhip;
+    font-family: 'Playfair Display', serif;
+    font-size: 110px;
+    text-align: center;
+    opacity: 0.8;
+}
+.sub-title-text {
+    color: papayawhip;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 20px;
+}
