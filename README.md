@@ -7,7 +7,6 @@ Welcome to the repository for the **Couch Pecan Farm Website**! This repository 
 - [About](#about)
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## About
@@ -26,3 +25,7 @@ The Couch Pecan Farm website offers a range of features, including:
 - **Online Store:** Allows customers to browse and purchase pecan products directly from the website.
 - **Events:** Highlights upcoming farm events, such as harvest festivals or educational workshops.
 - **Contact:** Provides contact information for the farm and a convenient contact form for inquiries.
+
+## License
+
+The Couch Pecan Farm website is released under the [MIT License](LICENSE).
