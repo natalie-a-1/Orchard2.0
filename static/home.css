@@ -39,12 +39,19 @@ body {
 .section {
     min-height: 100vh;
     overflow-y: scroll;
-    scroll-behavior: smooth;
-    padding: 50px 0;
+    scroll-behavior: initial;
+    padding: 20px 0;
 }
 
 .container {
     text-align: center;
+}
+
+.container h2 {
+    color: black;
+}
+.event-text p, .event-text h2 {
+    color: black;
 }
 
 .about-content {
@@ -59,8 +66,8 @@ body {
 }
 
 .about-image img {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 400px;
 }
 
 .about-text {
@@ -68,6 +75,9 @@ body {
     margin: 20px auto;
 }
 
+.about-text p {
+    color: black;
+}
 .navbar {
     position: fixed !important;
     top: 0;
