@@ -1,0 +1,71 @@
+@import 'static/sass/libs/vars';
+@import 'static/sass/libs/functions';
+@import 'static/sass/libs/mixins';
+@import 'static/sass/libs/vendor';
+@import 'static/sass/libs/breakpoints';
+@import 'static/sass/libs/html-grid';
+@import 'static/sass/libs/fixed-grid';
+@import 'static/css/fontawesome-all.min.css';
+@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
+
+/*
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+// Breakpoints.
+
+	@include breakpoints((
+		default:   (1681px,   null     ),
+		xlarge:    (1281px,   1680px   ),
+		large:     (981px,    1280px   ),
+		medium:    (737px,    980px    ),
+		small:     (481px,    736px    ),
+		xsmall:    (361px,    480px    ),
+		xxsmall:   (null,     360px    )
+	));
+
+// Mixins.
+
+	@mixin color($p) {
+		@include color-typography($p);
+		@include color-box($p);
+		@include color-button($p);
+		@include color-form($p);
+		@include color-list($p);
+		@include color-section($p);
+		@include color-table($p);
+		@include color-pagination($p);
+	}
+
+// Base.
+
+	@import 'static/sass/base/reset';
+	@import 'static/sass/base/page';
+	@import 'static/sass/base/typography';
+
+// Component.
+
+	@import 'static/sass/components/row';
+	@import 'static/sass/components/box';
+	@import 'static/sass/components/button';
+	@import 'static/sass/components/form';
+	@import 'static/sass/components/icon';
+	@import 'static/sass/components/image';
+	@import 'static/sass/components/actions';
+	@import 'static/sass/components/icons';
+	@import 'static/sass/components/list';
+	@import 'static/sass/components/section';
+	@import 'static/sass/components/table';
+	@import 'static/sass/components/pagination';
+
+// Layout.
+
+	@import 'static/sass/layout/wrapper';
+	@import 'static/sass/layout/intro';
+	@import 'static/sass/layout/header';
+	@import 'static/sass/layout/nav';
+	@import 'static/sass/layout/main';
+	@import 'static/sass/layout/footer';
+	@import 'static/sass/layout/navPanel';
