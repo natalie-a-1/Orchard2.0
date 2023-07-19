@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request, flash, session, redirect
+from flask import Flask, render_template, request, flash, redirect, url_for
 from flask_mail import Mail, Message
+from email_validator import validate_email
 
 import os
 
 # TODO switch emails
 # TODO put on server
-# TODO fix flash messages & sessions
 # TODO create requirements.txt
 app = Flask(__name__)
 app.secret_key = os.environ['SECRET_KEY']
@@ -26,13 +26,13 @@ def home_page():
         email = request.form['email']
         message = request.form['message']
         try:
+            valid_email = validate_email(email)
+            email = valid_email.email
             send_email(name, email, message)
-            flash('Email sent successfully', 'success')
+            flash('Email sent successfully. We will contact you soon!', category='success')
+            return redirect(url_for('home_page'))
         except Exception as e:
-            flash('Failed to send email', 'error')
-
-        # Redirect back to the home page after processing the form submission
-        return redirect('/')
+            flash('Failed to send email. Please contact teri@theorchardon66.com.', category='error')
     return render_template('index.html')
 
 
@@ -44,7 +44,6 @@ def send_email(name, email, message):
         msg.body = f"Name: {name}\nEmail: {email}\nSubject: {message}"
         mail.send(msg)
     except Exception as e:
-        # You can log the error here if needed
         raise e
 
 
