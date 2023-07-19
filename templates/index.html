@@ -12,15 +12,47 @@
 		<link rel="stylesheet" href="../static/css/main.css" />
         <link rel="stylesheet" href="../static/css/fontawesome-all.min.css" />
 		<noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
+        <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
 	</head>
 	<body class="is-preload">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {%if messages %}
+            {% for category, message in messages %}
+                {% if category == 'error' %}
+
+                    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type = "button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                {% else %}
+
+                    <div class="alert alert-success alert-dismissable fade show" role="alert">
+                        {{ message }}
+                        <button type = "button" class="close" data-dismiss="alert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                {% endif %}
+            {%endfor %}
+        {% endif %}
+        {% endwith %}
+
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
 
 				<!-- Intro -->
 					<div id="intro">
-						<h1>Couch Pecan Orchard</h1>
+						<h1>The Orcahrd on 66</h1>
 						<p>Rediscover the Iconic Spirit of Route 66 - Where Flavor Meets Community in Perfect Harmony.</p>
 						<ul class="actions">
 							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
@@ -138,7 +170,7 @@ Welcome to a truly unique journey along the historic route.</p>
 							</section>
 							<section>
 								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
+								<p><a href="mailto:teri@theorchardon66.com">teri@theorchardon66.com</a></p>
 							</section>
 							<section>
 								<h3>Social</h3>
@@ -165,6 +197,8 @@ Welcome to a truly unique journey along the historic route.</p>
 			<script src="../static/js/breakpoints.min.js"></script>
 			<script src="../static/js/util.js"></script>
 			<script src="../static/js/main.js"></script>
+
+
 
 	</body>
 </html>

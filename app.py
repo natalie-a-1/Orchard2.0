@@ -1,40 +1,42 @@
-from flask import Flask, render_template
-from flask import request
+from flask import Flask, render_template, request, flash, session
 from flask_mail import Mail, Message
 
+import os
+# TODO switch emails
+# TODO put on server
+# TODO fix flash messages & sessions
 app = Flask(__name__)
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 465
+app.secret_key = os.environ['SECRET_KEY']
+
+app.config['MAIL_SERVER'] = os.environ['MAIL_SERVER']
+app.config['MAIL_PORT'] = os.environ['MAIL_PORT']
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'nataliehill405@icloud.com'
-app.config['MAIL_PASSWORD'] = 'Thunder2003$'
+app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
+app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
 mail = Mail(app)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home_page():
+    if request.method == 'POST':
+        name = request.form['name']
+        email = request.form['email']
+        message = request.form['message']
+        send_email(name, email, message)
     return render_template('index.html')
 
 
-@app.route('/submit_form', methods=['POST'])
-def submit_form():
-    # Extract form data
-    name = request.form['name']
-    email = request.form['email']
-    message = request.form['message']
-
-    send_email(name, email, message)
-
-
 def send_email(name, email, message):
-    # Create the email message
-    msg = Message(message,
-                  recipients=['prestondjones7@gmail.com'])
-    msg.body = f"Name: {name}\nEmail: {email}\nSubject: {message}"
-
-    # Send the email
-    mail.send(msg)
+    try:
+        msg = Message(message,
+                      sender=os.environ['SENDER'],
+                      recipients=[os.environ['RECIPIENTS']])
+        msg.body = f"Name: {name}\nEmail: {email}\nSubject: {message}"
+        mail.send(msg)
+        flash('Email sent successfully', 'success')
+    except Exception as e:
+        flash('Failed to send email', 'error')
 
 
 if __name__ == '__main__':

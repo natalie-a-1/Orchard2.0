@@ -32,6 +32,14 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+ul.flash-messages {
+  list-style-type: none;
+}
+
+ul.flash-messages li {
+  color: red; /* Example styling */
+}
+
 
 ol, ul {
 	list-style: none;
