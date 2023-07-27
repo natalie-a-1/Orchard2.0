@@ -27,7 +27,7 @@ Couch Pecan Orchard's Flask website is designed to provide an engaging and user-
 
 ## Preview
 
-![Website Preview](./static/images-og/preview-1.png)
+![Website Preview](api/static/images-og/preview-1.png)
 
 [Live Demo](#) 
 
