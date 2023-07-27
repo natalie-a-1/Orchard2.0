@@ -22,8 +22,6 @@ def home_page():
         email = request.form['email']
         message = request.form['message']
         try:
-            valid_email = validate_email(email)
-            email = valid_email.email
             send_email(name, email, message)
             flash('Email sent successfully. We will contact you soon!', category='success')
             return redirect(url_for('home_page'))
