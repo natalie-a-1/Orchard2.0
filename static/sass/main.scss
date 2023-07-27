@@ -5,7 +5,7 @@
 @import 'api/staticreakpoints';
 @import 'api/statictml-grid';
 @import 'api/staticixed-grid';
-@import 'api/static/fontawesome-all.min.css';
+@import '../fontawesome-all.min.css';
 @import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
 
 /*
@@ -62,10 +62,10 @@
 
 // Layout.
 
-	@import 'api/static/wrapper';
-	@import 'api/static/intro';
-	@import 'api/static/header';
-	@import 'api/static/nav';
-	@import 'api/static/main';
-	@import 'api/static/footer';
-	@import 'api/static/navPanel';
+	@import '../wrapper';
+	@import '../intro';
+	@import '../header';
+	@import '../nav';
+	@import '../main';
+	@import '../footer';
+	@import '../navPanel';

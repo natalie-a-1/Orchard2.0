@@ -3,19 +3,15 @@ from flask_mail import Mail, Message
 from email_validator import validate_email
 
 import os
-
-# TODO switch emails
-# TODO put on server
-# TODO create requirements.txt
 app = Flask(__name__)
-app.secret_key = os.environ['SECRET_KEY']
+app.secret_key = 'test'
 
-app.config['MAIL_SERVER'] = os.environ['MAIL_SERVER']
-app.config['MAIL_PORT'] = os.environ['MAIL_PORT']
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 465
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
-app.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+app.config['MAIL_USERNAME'] = 'nataliehill1324@gmail.com'
+app.config['MAIL_PASSWORD'] = 'brispkbjwkszlsx'
 mail = Mail(app)
 
 
@@ -39,13 +35,9 @@ def home_page():
 def send_email(name, email, message):
     try:
         msg = Message(message,
-                      sender=os.environ['SENDER'],
-                      recipients=[os.environ['RECIPIENTS']])
+                      sender='nataliehill1324@gmail.com',
+                      recipients=['nataliehill1324@gmail.com'])
         msg.body = f"Name: {name}\nEmail: {email}\nSubject: {message}"
         mail.send(msg)
     except Exception as e:
         raise e
-
-
-if __name__ == '__main__':
-    app.run()
