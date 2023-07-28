@@ -125,7 +125,7 @@
 
 	// Nav Panel.
 
-		// Toggle.
+//		Toggle.
 			$navPanelToggle = $(
 				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
 			)

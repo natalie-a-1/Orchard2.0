@@ -3238,7 +3238,7 @@ input, select, textarea {
 			background-color: #212931;
 			background-image: url("/static/images-og/ParrallelTreesSmall-min.jpeg"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("bg.jpg");
 			background-size: cover, auto, cover;
-			background-position: center 65%, center, center;
+			background-position: center 70%, center, center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
 			background-attachment: scroll,								scroll,														scroll;
 			z-index: -1;
